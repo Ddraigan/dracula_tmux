@@ -118,7 +118,7 @@ main()
   tmux set-option -g message-style "bg=${gray},fg=${white}"
 
   # status bar
-  tmux set-option -g status-style "bg=${gray},fg=${white}"
+  tmux set-option -g status-style "bg=${dark_gray},fg=${white}"
 
   # Status left
   if $show_powerline; then
@@ -148,7 +148,7 @@ main()
       IFS=' ' read -r -a colors  <<< $(get_tmux_option "@dracula-cwd-colors" "dark_gray white")
       tmux set-option -g status-right-length 250
       script="#($current_dir/cwd.sh)"
-    
+
     elif [ $plugin = "fossil" ]; then
       IFS=' ' read -r -a colors  <<< $(get_tmux_option "@dracula-fossil-colors" "green dark_gray")
       tmux set-option -g status-right-length 250
