@@ -119,7 +119,7 @@ main()
 
   # status bar
   tmux set-option -g status-style "bg=default,fg=${white}"
-  tmux set status-bg default
+  tmux set -g status-bg default
 
   # Status left
   if $show_powerline; then
@@ -274,9 +274,9 @@ main()
 
   # Window option
   if $show_powerline; then
-    tmux set-window-option -g window-status-current-format "#[fg=${gray},bg=${dark_purple}]${left_sep}#[fg=${white},bg=${dark_purple}] #I #W${current_flags} #[fg=${dark_purple},bg=${gray}]${left_sep}"
+    tmux set-window-option -g window-status-current-format "#[fg=${gray},bg=${pink}]${left_sep}#[fg=${white},bg=${dark_purple}] #I #W${current_flags} #[fg=${dark_purple},bg=${gray}]${left_sep}"
   else
-    tmux set-window-option -g window-status-current-format "#[fg=${white},bg=${dark_purple}] #I #W${current_flags} "
+    tmux set-window-option -g window-status-current-format "#[fg=${white},bg=${pink}] #I #W${current_flags} "
   fi
 
   tmux set-window-option -g window-status-format "#[fg=${white}]#[bg=default] #I #W${flags}"
